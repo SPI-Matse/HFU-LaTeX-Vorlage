@@ -1,0 +1,58 @@
+\documentclass[
+    fontsize=12pt,          % default font size 12pt
+    paper=a4,               % DIN A4 page format
+    numbers=noenddot,       % remove dots behind chapter numbers (e.g. 1.5 not 1.5.)
+    listof=totoc,           % add list of figures, tables, etc. to ToC
+    listof=entryprefix,     % add entry name to figures, tables, etc.
+    listof=nochaptergap,    % no chapter gap for figures, tables, etc.
+    bibliography=totoc,     % add bibliography to ToC but without a chapter number
+    parskip=half            % half line spacing between paragraphs
+]{scrbook}
+
+\input{preamble}                      % load preamble
+
+\begin{document}
+
+\include{framework/titlepage}           % title page
+
+% Roman numbering
+\frontmatter
+\pagenumbering{Roman}
+
+\include{framework/abstract}            % Abstract
+\tableofcontents                        % Contents
+\listoffigures                          % List of Figures
+\listoftables                           % List of Tables
+\lstlistoflistings                      % List of Code Listings
+\include{framework/abbreviations}       % Abbreviations
+
+% Content
+\mainmatter
+% Anfang
+\include{content/0_einleitung}
+\include{content/0_Grundlagen}
+% eigene Kapitel
+\include{content/1_Problemanalyse}
+\include{content/2_Tools}
+\include{content/3_Umsetzung}
+\include{content/4_Lern-Ergebnisse}
+% Ende
+\include{content/99_Ausblick}
+\include{content/99_Fazit}
+
+% Bibliography
+\begin{singlespace}
+    \printbibliography
+\end{singlespace}
+
+% Declaration of Authorship (in German)
+\include{framework/declaration_of_authorship}   
+
+% Appendices
+\appendix
+
+\begin{appendices}
+    % \include{appendix/CompleteCode}
+\end{appendices}
+
+\end{document}

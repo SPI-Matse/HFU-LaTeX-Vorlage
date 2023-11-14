@@ -1,0 +1,55 @@
+### IntelliJ IDEA ###
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+*.code-workspace
+
+### Mac OS ###
+.DS_Store
+.idea/
+
+### LaTeX ###
+
+*.aux
+*.bbl
+*.lol
+*.fls
+*.fdb_latexmk
+*.blg
+*.lof
+*.lot
+*.out
+*.gz
+*.toc
+*.bcf
+*.run.xml
+
+### Output files ###
+Seminararbeit WA/pictures/hfu_logo_vector_4C-eps-converted-to.pdf
+Projektarbeit Einführung in die Informatik/pictures/hfu_logo_vector_4C-eps-converted-to.pdf
+*.log
+
+*.dvi
+
+*.ps
