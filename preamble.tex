@@ -274,3 +274,36 @@
 % ##################################################
 % better referencing of images, tables, etc.
 \usepackage[nameinlink, noabbrev]{cleveref} 
+
+% ##################################################
+% CUSTOM LISTINGS LANGUAGE
+% ##################################################
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{backcolour},
+    literate=
+     *{0}{{{\color{codepurblue}0}}}{1}
+      {1}{{{\color{codepurblue}1}}}{1}
+      {2}{{{\color{codepurblue}2}}}{1}
+      {3}{{{\color{codepurblue}3}}}{1}
+      {4}{{{\color{codepurblue}4}}}{1}
+      {5}{{{\color{codepurblue}5}}}{1}
+      {6}{{{\color{codepurblue}6}}}{1}
+      {7}{{{\color{codepurblue}7}}}{1}
+      {8}{{{\color{codepurblue}8}}}{1}
+      {9}{{{\color{codepurblue}9}}}{1}
+      {:}{{{\color{codegray}{:}}}}{1}
+      {,}{{{\color{codegray}{,}}}}{1}
+      {\{}{{{\color{codegreen}{\{}}}}{1}
+      {\}}{{{\color{codegreen}{\}}}}}{1}
+      {[}{{{\color{codegreen}{[}}}}{1}
+      {]}{{{\color{codegreen}{]}}}}{1},
+}
