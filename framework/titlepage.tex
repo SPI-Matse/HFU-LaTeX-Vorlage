@@ -10,26 +10,27 @@
     \end{flushright}
     
     \begin{center}
-        {\fontsize{18}{18} \selectfont \docType}\\[5mm]
+        {\fontsize{18}{18} \selectfont \docType}\\[5mm]      % Art der Arbeit: 18pt ✓
         {\fontsize{18}{18} \selectfont im Bereich} \\[5mm]
         {\fontsize{18}{18} \selectfont \docStudyProgram}\\
         
         \vspace{1cm}
-        
-        {\fontsize{22}{22} \selectfont \textbf{\docTitle}}\\[5mm]
-        {\fontsize{18}{18} \selectfont \docSubTitle}
+        {\fontsize{22}{22} \selectfont \textbf{\docTitle}}\\ % Titel: 22pt, fett ✓
+        {\fontsize{18}{18} \selectfont \docSubTitle}         % Untertitel: 18pt ✓
     
         \vspace{6cm}
         
+
+        % Für Referent/Korreferent/etc:
         \begin{tabular}{ll}
-            Referent:      & \docSupervisor    \\\\
-            Korreferent:    & \docCosupervisor  \\\\
-            Ersetztes Modul:    & \docModule  \\\\
-            eingereicht am:       & \docDeadline      \\\\
-            eingereicht von:       & \docAuthor        \\
-                                & matriculation~number:~\docMatriculationNumber\\
-                                & \docStreetName,~\docPostalCode~\docCity\\
-                                & \docEmail			
+            {\fontsize{12}{12}\selectfont Referent:}        & {\fontsize{12}{12}\selectfont \docSupervisor}    \\\\
+            {\fontsize{12}{12}\selectfont Korreferent:}     & {\fontsize{12}{12}\selectfont \docCosupervisor}  \\\\
+            {\fontsize{12}{12}\selectfont Ersetztes Modul:} & {\fontsize{12}{12}\selectfont \docModule}        \\\\
+            {\fontsize{12}{12}\selectfont eingereicht am:}  & {\fontsize{12}{12}\selectfont \docDeadline}      \\\\
+            {\fontsize{12}{12}\selectfont eingereicht von:} & {\fontsize{12}{12}\selectfont \docAuthor}        \\\\
+            & {\fontsize{12}{12}\selectfont matriculation~number:~\docMatriculationNumber}\\
+            & {\fontsize{12}{12}\selectfont \docStreetName,~\docPostalCode~\docCity}\\
+            & {\fontsize{12}{12}\selectfont \docEmail}
         \end{tabular}
     \end{center}
     \end{titlepage}

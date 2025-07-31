@@ -12,8 +12,8 @@
 \input{preamble}                      % load preamble
 
 \begin{document}
-
-\include{framework/titlepage}           % title page
+\include{framework/titlepage}
+\cleardoublepage  % Leere Trennseite nach Titelblatt
 
 % Roman numbering
 \frontmatter
@@ -46,7 +46,8 @@
 \end{singlespace}
 
 % Declaration of Authorship (in German)
-\include{framework/declaration_of_authorship}   
+\cleardoublepage  % Leere Trennblatt vor Erklärung
+\include{framework/declaration_of_authorship}
 
 % Appendices
 \appendix

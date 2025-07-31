@@ -88,16 +88,18 @@
 
 \usepackage{anyfontsize} % use any font size
 
-% font sizes and styles
-\addtokomafont{chapter}{\sffamily\large\bfseries}  % chapter heading 
-\addtokomafont{section}{\sffamily\normalsize\bfseries} 
-\addtokomafont{subsection}{\sffamily\normalsize\mdseries}
-\addtokomafont{caption}{\sffamily\normalsize\mdseries}
+% font sizes and styles% Exakte Schriftgrößen gemäß Richtlinie
+\addtokomafont{chapter}{\sffamily\fontsize{14}{14}\selectfont\bfseries}  % 14pt, fett
+\addtokomafont{section}{\sffamily\fontsize{12}{12}\selectfont\bfseries}  % 12pt, fett
+\addtokomafont{subsection}{\sffamily\fontsize{12}{12}\selectfont\bfseries} % 12pt, fett
+\addtokomafont{subsubsection}{\sffamily\fontsize{12}{12}\selectfont} % 12pt, normal
 
 % url font style
 \usepackage{relsize}
 \renewcommand*{\UrlFont}{\ttfamily\smaller\relax}
 
+% Kapitel beginnen immer auf rechter Seite
+\KOMAoptions{open=right}
 
 
 % ##################################################
@@ -239,8 +241,8 @@
 % appendix chapter
 \newcommand{\appendixchapter}[1]{
     \cleardoublepage
-    \pagenumbering{arabic}
     \renewcommand{\thepage}{\thechapter-\arabic{page}}
+    \setcounter{page}{1}  % Reset page counter for each appendix
     \chapter{#1}
 }
 
