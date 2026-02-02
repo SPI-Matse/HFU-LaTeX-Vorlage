@@ -138,6 +138,7 @@
 
 
 \usepackage{wrapfig}       % wrap text around figures
+\usepackage{float}         % enables the H float option
 
 
 
@@ -150,47 +151,6 @@
 % simple numbering without chapter
 \renewcommand{\thetable}{\arabic{table}}
 \counterwithout{table}{chapter}
-
-
-
-% ##################################################
-% SOURCE CODE LISTINGS
-% ##################################################
-\usepackage{listings}
-\usepackage{beramono}   % use a typewriter font which supports bold characters
-
-\renewcommand{\lstlistlistingname}{List of Code Listings}   % 
-\renewcommand{\lstlistingname}{Code Listing}
-\newcommand{\listoflolentryname}{\lstlistingname}   % prefix for List of Code Listings
-
-% define colors for source code highlighting
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.5,0,0.33}
-\definecolor{codepurblue}{rgb}{0.16,0.0,1.0}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-
-% set source code style
-\lstdefinestyle{codestyle}{
-    backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codegreen},
-    keywordstyle=\bfseries\color{codepurple},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurblue},
-    basicstyle=\scriptsize\ttfamily,
-    breakatwhitespace=false,
-    breaklines=true,
-    captionpos=b,
-    keepspaces=true,
-    numbers=left,
-    numbersep=5pt,
-    showspaces=false,
-    showstringspaces=false,
-    showtabs=false,
-    tabsize=2,
-    escapeinside={(*@}{@*)}
-}
-\lstset{style=codestyle, numberbychapter=false}
 
 
 
@@ -270,140 +230,13 @@
 \newtheorem{definition}{Definition}
 
 
-
 % ##################################################
 % MISC
 % ##################################################
 % better referencing of images, tables, etc.
-\usepackage[nameinlink, noabbrev]{cleveref} 
+\usepackage[nameinlink, noabbrev]{cleveref}
 
-% ##################################################
-% CUSTOM LISTINGS LANGUAGE
-% ##################################################
-
-\lstdefinelanguage{json}{
-    basicstyle=\normalfont\ttfamily,
-    numbers=left,
-    numberstyle=\scriptsize,
-    stepnumber=1,
-    numbersep=8pt,
-    showstringspaces=false,
-    breaklines=true,
-    frame=lines,
-    backgroundcolor=\color{backcolour},
-    literate=
-     *{0}{{{\color{codepurblue}0}}}{1}
-      {1}{{{\color{codepurblue}1}}}{1}
-      {2}{{{\color{codepurblue}2}}}{1}
-      {3}{{{\color{codepurblue}3}}}{1}
-      {4}{{{\color{codepurblue}4}}}{1}
-      {5}{{{\color{codepurblue}5}}}{1}
-      {6}{{{\color{codepurblue}6}}}{1}
-      {7}{{{\color{codepurblue}7}}}{1}
-      {8}{{{\color{codepurblue}8}}}{1}
-      {9}{{{\color{codepurblue}9}}}{1}
-      {:}{{{\color{codegray}{:}}}}{1}
-      {,}{{{\color{codegray}{,}}}}{1}
-      {\{}{{{\color{codegreen}{\{}}}}{1}
-      {\}}{{{\color{codegreen}{\}}}}}{1}
-      {[}{{{\color{codegreen}{[}}}}{1}
-      {]}{{{\color{codegreen}{]}}}}{1},
-}
-
-% ##################################################
-% PowerApps Language Listing
-% ##################################################
-\definecolor{powerFxBlue}{RGB}{0,0,255} % could be used for functions
-\definecolor{powerFxLightBlue}{RGB}{0, 124, 133} % could be used for collections
-\definecolor{powerFxMediumBlue}{RGB}{0,0,200} % could be used for variables
-\definecolor{powerFxRed}{RGB}{255,0,0} 
-\definecolor{powerFxGreen}{RGB}{0,255,0} % could be used for comments
-\definecolor{powerFxYellow}{RGB}{255,255,0}
-\definecolor{powerFxPurple}{RGB}{128,0,128}
-\definecolor{powerFxOrange}{RGB}{255,165,0} % could be used for strings
-\definecolor{powerFxPink}{RGB}{255,192,203}
-\definecolor{powerFxBlack}{RGB}{0,0,0}
-\definecolor{powerFxLightGrey}{RGB}{232,232,232} % could be used for variable initialization
-\definecolor{powerFxDarkGrey}{RGB}{110,110,110}
-
-\lstdefinelanguage{PowerApps}{
-    % &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-    % Standard PA Functions in blue (rgb0,0,255)
-    % add variables / collections / your own 'words' that you want to have colored in the specific premade keywordlist ( morekeywords )
-    % add a new keywordslist with another color this way:
-    % morekeywords=[6]{your,words,here}, keywordstyle=[6]\color{yourColor}, // 6 is an example, use any number that is not used yet
-    % &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-    keywords={ 
-        % Variables & Collections --> add appropriatly if you miss anything
-        UpdateContext, Set, Clear, Collect, ClearCollect, Remove, RemoveIf, 
-        LookUp, First, Last, FirstN, LastN, Filter, Sort, SortByColumns, 
-        Search, AddColumns, DropColumns, RenameColumns, ShowColumns, 
-        SelectColumns, GroupBy, Ungroup, AddColumns, Select, CountRows, ForAll,
-        IsEmpty, IsBlank, 
-        % Logical Operations
-        And, Or, Not, If, Switch, IsBlank, IsEmpty, IsError, IsMatch, MatchAll, Match, ForAll, IfError,
-        % Math Operations
-        Abs, Add, Average, Acos, Asin, Atan, Atan2, Sin, Cos, Tan, Sqrt, Mod, 
-        Round, Sum, Subtract, Multiply, Divide, Power, Min, Max, RoundUp, RoundDown, Rand, Long,
-        Log, Pi, Exp, Degrees, Radians, Degrees
-        % String Operations
-        Concat, Left, Right, Mid, Len, Lower, Upper, Proper, Trim, TrimEnds, Replace, Substitute,
-        Concatenate, StartsWith, EndsWith, Find, Search, Split, Text, Value,
-        Navigate, Back, Refresh, 
-        Patch, 
-        Text(, Value, 
-        Concatenate, Mid, Len, Trim, Lower, Upper, Proper, Replace, Substitute, Round, TrimEnds,
-        RoundUp, RoundDown, Truncate,  
-        Split, Trim, Left, Right, Concatenate,
-        Notify, Reset, With, ForEach, AddColumns, Select, RGBA,
-        % Office365Users
-        DirectReports, DirectReportsV2, HttpRequest, Manager, ManagerV2, MyProfile, MyProfileV2, MyTrendingDocuments, RelevantPeople, SearchUser, SearchUserV2, TrendingDocuments, UpdateMyPhoto, UpdateMyProfile, UserPhoto, UserPhotoMetadata, UserPhotoV2, UserProfile, UserProfileV2 },
-    keywordstyle=\color{powerFxBlue}\bfseries,
-    comment=[l]{//},
-    commentstyle=\color{powerFxGreen}\ttfamily,
-    stringstyle=\color{powerFxOrange}\ttfamily,
-    morestring=[b]",
-    morestring=[b]',
-    % -----------------------------------------
-    % variables on right side or highlightcolor: blue (rgb0,0,200)
-    % -----------------------------------------
-    morekeywords=[2]{
-        const
-    }, keywordstyle=[2]\color{powerFxMediumBlue},
-    % -----------------------------------------
-    % collections or highlightcolor: light blue
-    % -----------------------------------------
-    morekeywords=[3]{
-        col_Feedback
-    }, keywordstyle=[3]\color{powerFxLightBlue},
-    % -----------------------------------------
-    % functions or highlightcolor: red
-    % -----------------------------------------
-    morekeywords=[4]{
-        Mail,
-        Email,
-        Text,
-        EntraObjectId,
-        FullName,
-        Image,
-    }, keywordstyle=[4]\color{powerFxPurple},
-    % -----------------------------------------
-    % new variables or highlightcolor: dark grey
-    % -----------------------------------------
-    morekeywords=[5]{
-        rating, 
-        comment
-    }, keywordstyle=[5]\color{powerFxDarkGrey},
-    literate={*}{{\textcolor{powerFxPink}{*}}}{1}
-        {=}{{\textcolor{black}{=}}}{1}
-        {,}{{\textcolor{black}{,}}}{1}
-        {;}{{\textcolor{black}{;}}}{1}
-        {:}{{\textcolor{black}{:}}}{1}
-        {.}{{\textcolor{black}{.}}}{1}
-        {(}{{\textcolor{black}{(}}}{1}
-        {)}{{\textcolor{black}{)}}}{1}
-        {[}{{\textcolor{black}{[}}}{1}
-        {]}{{\textcolor{black}{]}}}{1}
-        {\{}{{\textcolor{black}{\{}}}{1}
-        {\}}{{\textcolor{black}{\}}}}{1}
-}
+% quickly highlight text in red
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
